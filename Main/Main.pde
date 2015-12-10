@@ -1,4 +1,11 @@
-PImage archar1,archar2,go,sabertext,saber1,saber2,stage;	//pictures
+//	pictures initial  
+PImage archar1,archar2,go,sabertext,saber1,saber2,stage;	
+
+// 	press initial
+boolean upPressed = false, downPressed = false, leftPressed = false, rightPressed = false;
+
+//	hero initial
+int heroX = 0; heroy = 0; speed = 0;
 
 void setup() {
 	size(1024, 768);	
@@ -24,22 +31,91 @@ void draw() {
 		}
 		case 1:
 		{
+			//Choose Role Page
 		image(archar2,120,60);	
 		image(saber1,528,60);
+
 		break;
 		}
 		case 2:
 		{
-
+			//Runnung Page
 		break;
 		}
 		case 3:
 		{
-
+			// Dead Page
 		break;
 		}
+		case 4 :
+			// End Page
+		break;	
 	}
 
 	
 		
+}
+void pressSetting() {
+    if (upPressed) {// 按件判別
+      heroy -= speed;
+    }
+    if (downPressed) {
+      heroy += speed;
+    }
+    if (leftPressed) {
+      heroX -= speed;
+    }
+    if (rightPressed) {
+      heroX += speed;
+    }
+
+ }
+
+void keyPressed() {
+    if (key == CODED) {
+      switch (keyCode) {
+      case UP:
+        upPressed = true;
+        break;
+      case DOWN:
+        downPressed = true;
+        break;
+      case LEFT:
+        leftPressed = true;
+        break;
+      case RIGHT:
+        rightPressed = true;
+        break;
+      }
+    }
+
+    if (key == ' ' ) {
+      //attack
+    }
+    if (key == 'z') {
+      //go to Die    	
+    }    
+  }
+
+void keyReleased() {
+    if (key == CODED) {
+      switch (keyCode) {
+      case UP:
+        upPressed = false;
+        break;
+      case DOWN:
+        downPressed = false;
+        break;
+      case LEFT:
+        leftPressed = false;
+        break;
+      case RIGHT:
+        rightPressed = false;
+        break;
+      }
+    }
+}
+
+void keyPress(){
+
 }
