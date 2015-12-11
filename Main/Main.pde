@@ -1,11 +1,14 @@
 //	pictures initial  
 PImage archar1,archar2,go,sabertext,saber1,saber2,stage;	
-
+PFont myFont;
 // 	press initial
-boolean upPressed = false, downPressed = false, leftPressed = false, rightPressed = false;
+boolean upPressed = false, downPressed = false, 
+leftPressed = false, rightPressed = false;
 
 //	hero initial
-int heroX = 0; heroy = 0; speed = 0;
+int heroX = 0; 
+int heroy = 0; 
+int speed = 0;
 
 void setup() {
 	size(1024, 768);	
@@ -16,10 +19,12 @@ void setup() {
 	saber1 = loadImage("img/SABER1.png");
 	saber2 = loadImage("img/SABER2.png");
 	stage = loadImage("img/stage.png");
-
+	myFont = createFont("W7.TTC",100);
+	textFont(myFont);
 }
 
-int condition = 1;  //狀態判定
+int condition = 4;  //狀態判定
+
 void draw() {
 	background(0); // tmp
 	// String condition = chooseRole;  //狀態判定
@@ -32,8 +37,8 @@ void draw() {
 		case 1:
 		{
 			//Choose Role Page
-		image(archar2,120,60);	
-		image(saber1,528,60);
+		// image(archar2,120,60);	
+		// image(saber1,528,60);
 
 		break;
 		}
@@ -48,6 +53,12 @@ void draw() {
 		break;
 		}
 		case 4 :
+			textSize(32);
+			String end = "                     
+			 Congradulations!!\n不論你是Jones老師，\n還是同班的同學們，\n謝謝你們願意玩完他";
+			textMode(LEFT);
+			
+			text(end, 20, 50); 
 			// End Page
 		break;	
 	}
@@ -117,5 +128,33 @@ void keyReleased() {
 }
 
 void keyPress(){
+
+}
+
+//敵人設定
+class enemy{
+	void enemyBuilder(){
+
+	}
+	
+	void enemySet(){
+
+	}
+
+	void enemyGet(){
+
+	}
+}
+
+class stage{
+	void stage1(){
+
+	}
+	void stage2(){
+
+	}
+	void stage3(){
+
+	}
 
 }
